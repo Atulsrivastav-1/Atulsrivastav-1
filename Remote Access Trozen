@@ -1,0 +1,40 @@
+# Termux ko update karein
+pkg update && pkg upgrade -y
+
+# Zaroori dependencies install karein
+pkg install wget curl git zip unzip -y
+
+# GitHub ke liye Git install karein
+pkg install git -y
+
+# Ek naya folder banayein (agar aapke paas pehle se koi folder nahi hai)
+mkdir metasploit-project
+cd metasploit-project
+
+# Aapka script aur zaroori files copy karein
+echo -e "pkg update && pkg upgrade -y\npkg install wget curl git zip unzip -y\ncurl -LO https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh\nchmod +x metasploit.sh\n./metasploit.sh\ncd \$HOME/metasploit-framework\ngem install bundler\nbundle install\nexport PATH=\$PATH:\$HOME/metasploit-framework\n./msfconsole" > install.sh
+
+# Git repository initialize karein
+git init
+
+# GitHub par naya repository create karein (Pehle GitHub par manually ek repo bana lein)
+# Phir us repo ka URL yahan replace karein
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+# Files ko Git me add karein
+git add .
+
+# Commit karein
+git commit -m "Initial commit - Metasploit installation script"
+
+# Branch set karein (Agar zaroorat ho)
+git branch -M main
+
+# GitHub par push karein
+git push -u origin main
+
+
+
+This repository provides an automated script that installs and configures Metasploit in Termux. It updates and upgrades packages, installs necessary dependencies including wget, curl, git, zip, and unzip, and fixes potential Ruby issues. The script ensures a seamless setup for penetration testing, ethical hacking, and cybersecurity research on Android devices by streamlining installation steps and reducing manual configuration effort effectively.
+
+
