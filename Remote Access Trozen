@@ -34,7 +34,3 @@ git branch -M main
 git push -u origin main
 
 
-
-This repository provides an automated script that installs and configures Metasploit in Termux. It updates and upgrades packages, installs necessary dependencies including wget, curl, git, zip, and unzip, and fixes potential Ruby issues. The script ensures a seamless setup for penetration testing, ethical hacking, and cybersecurity research on Android devices by streamlining installation steps and reducing manual configuration effort effectively.
-
-
